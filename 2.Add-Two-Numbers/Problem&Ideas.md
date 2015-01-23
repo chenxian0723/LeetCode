@@ -3,6 +3,8 @@ You are given two linked lists representing two non-negative numbers. The digits
 **Input**: (2 -> 4 -> 3) + (5 -> 6 -> 4)  
 **Output**: 7 -> 0 -> 8  
 
+---
+
 ###Ideas
 这题思路比较简洁，就是模拟加法的过程，使用一个标志来记录是否进位即可。  
 代码写法上有两个小的分支：  
