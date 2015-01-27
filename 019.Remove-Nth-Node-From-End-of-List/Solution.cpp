@@ -9,10 +9,10 @@
 class Solution {
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n) {
+        ListNode *vhead=new ListNode(0);
+        vhead->next=head;
         ListNode *p1=head;  
-        ListNode *p2=new ListNode(0);   //让p2比head多一个节点，可以方便地处理移除头结点等问题。
-        ListNode *result=p2;
-        p2->next=head;
+        ListNode *p2=vhead;   //让p2比head多一个节点，可以方便地处理移除头结点等问题。
         
         for(int i=0;i<n;i++){   //将p1移动n个单位
             p1=p1->next;
@@ -24,6 +24,6 @@ public:
         }
         p2->next=p2->next->next;    //删除节点
         
-        return result->next;
+        return vhead->next;
     }
 };
