@@ -13,9 +13,9 @@ public:
             return l2;
         if(l2==NULL)
             return l1;
-        ListNode *res=new ListNode(0);
+        ListNode *vhead=new ListNode(0);
         
-        ListNode *pre=res;    //pre指向当前的元素，并将pre->next指向l1和l2中较小的元素
+        ListNode *pre=vhead;    //pre指向当前的元素，并将pre->next指向l1和l2中较小的元素
         while(l1&&l2){
             if(l1->val<l2->val){
                 pre->next=l1;
@@ -34,6 +34,6 @@ public:
         else
             pre->next=l1;
         
-        return res->next;
+        return vhead->next;
     }
 };
