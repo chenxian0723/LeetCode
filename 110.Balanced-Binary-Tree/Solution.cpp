@@ -22,7 +22,7 @@ public:
             return true;
         }
         int left,right;
-        bool flag=isBalancedTree(root->left,left)&&isBalancedTree(root->right,right);
+        bool flag=isBalancedTree(root->left,left)&&isBalancedTree(root->right,right);   //此步完成时已经获得了左右子树的深度
         if((left-right>1)||(right-left>1))
             return false;
         depth=max(left,right)+1;    //设置深度
