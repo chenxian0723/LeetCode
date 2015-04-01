@@ -9,4 +9,4 @@ Given two binary strings, return their sum (also a binary string).
 
 ###Ideas
 模拟二进制数的加法，这类题思路都是一样的（a+b+carry）。只不过这里用2代替10。  
-除以2的时候尽量用位运算>>，速度比较快。（这个习惯要养成）  
+除以2的时候尽量用'>>'位运算，速度比较快，这个习惯要养成。
