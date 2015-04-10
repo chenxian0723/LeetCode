@@ -41,6 +41,20 @@
 #####queue
 `queue需要的操作有队首pop()，队尾push()，front()，back()四个，通过deque实现最方便，也能通过list实现。`  
 #####priority_queue
-`priority_queue和queue看起来很像，但实质上是不同的。`  
-`priority_queue每次出列的是值最大的数。因此每一次push后必须对队列进行排序，找出最大的值。`  
-`事实上，我们每次只需要找到最大的值，而并不需要完全对队列进行排序，使用最大堆来实现最合理不过了。`   `最大堆本身是用数组实现的，因此对于priority_queue，选用vector作为底层容器来实现。`  
+`priority_queue和queue看起来很像，但实质上是不同的。`     
+`priority_queue每次出列的是值最大的数。因此每一次push后必须对队列进行排序，找出最大的值。`     
+`事实上，我们每次只需要找到最大的值，而并不需要完全对队列进行排序，使用最大堆来实现最合理不过了。`      `最大堆本身是用数组实现的，因此对于priority_queue，选用vector作为底层容器来实现。`     
+#####set/multiset
+`一组元素的集合。有没有multi的区别就是集合里的元素唯不唯一。`     
+`set内部是基于红黑树实现的（红黑树是一棵排序二叉树），因此set内部是排序的。对set进行遍历输出就能发现了。`     
+#####map/multimap
+`一组映射（key-value）的集合。有没有multi的区别就是集合里的key唯不唯一。`     
+`map内部是基于红黑树实现的（红黑树是一棵排序二叉树），因此map内部是根据key排序的。对map进行遍历输出就能发现了。`    
+`map中可以使用[key]操作来对元素进行读写操作`
+#####unordered_set/unordered_multiset
+`类似于set，只不过其内部是不排序的。有没有multi的区别就是集合里的元素唯不唯一`     
+`unordered_set内部是基于哈希表实现的，并了获得更快的读写速度而牺牲了有序的特性。`   
+#####unordered_map/unordered_multimap
+`类似于map，只不过其内部是不排序的。有没有multi的区别就是集合里的key唯不唯一`     
+`unordered_map内部是基于哈希表实现的，并了获得更快的读写速度而牺牲了有序的特性。`   
+`map中可以使用[key]操作来对元素进行读写操作`
