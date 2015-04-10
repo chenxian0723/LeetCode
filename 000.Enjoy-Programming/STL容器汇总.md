@@ -39,8 +39,8 @@
 `stack需要的操作有pop()，push()，top()三个，都是在尾部进行操作，从原理上看使用vector、deque、list都能方便地实现stack。`  
 `事实上，容器适配器是可以指定底层实现容器的类型的，不过为了和queue统一，默认采用deque实现。`  
 #####queue
-`queue需要的操作有队前pop()，队尾push()，front()，back()四个，通过deque实现最方便，也能通过list实现。`  
+`queue需要的操作有队首pop()，队尾push()，front()，back()四个，通过deque实现最方便，也能通过list实现。`  
 #####priority_queue
-`priority_queue和queue看起来很像，但实质上是不同的。` 
+`priority_queue和queue看起来很像，但实质上是不同的。`  
 `priority_queue每次出列的是值最大的数。因此每一次push后必须对队列进行排序，找出最大的值。`  
-`事实上，我们每次只需要找到最大的值，而并不需要完全对队列进行排序，使用最大堆来实现最合理不过了，而最大堆本身是用数组实现的，因此对于priority_queue，选用vector作为底层容器来实现。`  
+`事实上，我们每次只需要找到最大的值，而并不需要完全对队列进行排序，使用最大堆来实现最合理不过了。`   `最大堆本身是用数组实现的，因此对于priority_queue，选用vector作为底层容器来实现。`  
