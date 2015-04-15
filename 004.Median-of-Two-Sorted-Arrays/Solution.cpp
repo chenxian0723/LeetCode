@@ -20,6 +20,7 @@ public:
          int k=(m+n)/2;
          if(2*k==m+n)   //中位数定义
             return (findkth(A,m,B,n,k)+findkth(A,m,B,n,k+1))/2;
+            //这里想到一种方法是，直接获得kth的下一个值，而不需要再递归一遍k+1，只要在findkth中加一个&next引用，返回的时候设置引用的值，不过速度好像并没有提高。
          else
             return findkth(A,m,B,n,k+1);
     }
