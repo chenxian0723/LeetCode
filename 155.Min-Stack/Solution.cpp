@@ -21,6 +21,6 @@ public:
     }
 
     int getMin() {
-        return min(s1.top(),s2.top());
+        return s2.top();
     }
 };
