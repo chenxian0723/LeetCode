@@ -20,7 +20,7 @@ public:
         while(head){
             if(pre->val==head->val)     //相同则head后移，pre不变
                 head=head->next;
-            else{       //不同，head和pre均后移
+            else{       //不同，pre->next指向head,pre后移
                 pre->next=head;
                 pre=head;
                 head=head->next;
