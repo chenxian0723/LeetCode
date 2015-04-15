@@ -32,8 +32,8 @@ public:
         }
         
         if(carry==1){       //处理最后一个数产生的进位
-            ListNode *tnode=new ListNode(1);
-            pre->next=tnode;
+            ListNode *vnode=new ListNode(1);
+            pre->next=vnode;
         }
         
         return result;
