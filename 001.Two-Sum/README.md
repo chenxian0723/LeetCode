@@ -8,5 +8,5 @@ You may assume that each input would have exactly one solution.
 ----
 
 ###Ideas
-常规方法使用双重循环肯定会超时，因此我们应该试图降低时间复杂度。  
-很多人都会想到哈希，因此我们就使用map来完成这个题，想到了使用map后这个题就没什么难点了。
+常规方法使用双重循环肯定会超时，因此我们应该试图降低查找的时间复杂度。  
+很多人都会想到哈希，因此我们就使用unordered_map来完成这个题，想到了使用unordered_map后这个题就没什么难点了。
