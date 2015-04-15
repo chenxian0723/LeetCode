@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int atoi(string str) {
+    int myAtoi(string str) {
         int pos=0;
         int sign=1;
         while(str[pos]==' '){     //去空格
@@ -10,10 +10,8 @@ public:
             sign=-1;
             pos++;
         }
-        else{
-            if(str[pos]=='+')
-                pos++;
-        }
+        else if(str[pos]=='+')
+            pos++;
         int sum=0;
         bool overflow=false;
         while((pos!=str.length())&&(str[pos]-'0'<=9)&&(str[pos]-'0'>=0)){
