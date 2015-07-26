@@ -1,18 +1,18 @@
-//操作符重载、函数模版、
+//C++笔记
 
 #include <iostream>
 
 using namespace std;
 
-
 class Complex{
 private:
 	double real;
 	double imageinary;
+
 	//静态变量为所有类的成员共享，只有一个
-	//sizeof不计算静态成员变量
 	static int count;
 public:
+
 	//静态成员函数类似于变量，静态函数中只能有静态变量，不能有其他变量
 	//可以通过类名访问Complex::getCount()，也可以通过实例（指针、引用）访问c.getCount()
 	static int getCount(){
@@ -24,11 +24,13 @@ public:
 		real = r;
 		imageinary = i;
 	}
+
 	//赋值构造函数，函数尽量用常引用作为参数，减少构造实例时间
 	Complex(const Complex &c){
 		real = c.real;
 		imageinary = c.imageinary;
 	}
+
 	//操作符重载为成员函数
 	//如果需要改变参数时不加const，例如>>，否则就加上const
 	//c+a相当于c.operator+(a)，a+c就必须调用a的成员函数
@@ -36,10 +38,12 @@ public:
 	Complex & operator+ (const Complex &a){
 		return Complex(real + a.real, imageinary + a.imageinary);
 	}
+
 	//为了访问类的私有成员，需要声明为友元函数
 	friend Complex & operator+ (const Complex &a, const Complex &b);
 	friend ostream & operator<< (ostream &os, const Complex &c);
 	friend istream & operator>> (istream &is, Complex &c);
+
 	//前置自加符，没有参数，普通函数时一个参数
 	Complex & operator++ (){
 		real++;
@@ -52,6 +56,7 @@ public:
 		real++;
 		return tmp;
 	}
+
 	//友元函数和友元类
 	//友元函数说明该函数不是类的成员函数（因此实现时前面不需要加类名），但可以访问类的私有成员
 	//int类中可以创建Complex类实例，并访问Complex的私有成员
@@ -86,6 +91,7 @@ void exampleOfTemplate(){
 		x = y;
 		y = tmp;
 	}
+
 	//模版函数也可以重载
 	template <class T1, class T2>
 	void Swap(T1 &x, T2 &y){
@@ -196,13 +202,12 @@ void exampleOfDynamicMemoryAllocation(){
 	//只能在heap的类：将构造函数和析构函数设为private
 }
 
+
 //继承方式：public，private，protected，virtual
 //public继承，所有成员保持原样
 //private继承，父类的public和protected作为子类的private（基类仍可以访问）
 //protected继承，父类的public和protected作为子类的protected（基类仍可以访问）
 //virtual继承，为了解决基类的方法在多重继承中出现二义性的问题(?)
-
-
 class CBug{
 private:
 	int a;
@@ -236,6 +241,7 @@ class CMaster{
 	CDog *dogs[10]
 };
 
+
 //虚函数和多态
 //基类的指针/引用可以指向派生类，调用同名函数时调用所指向的类的虚函数
 //作用：能够增强程序的可扩展性，减少改动功能时所需的代码量
@@ -261,12 +267,12 @@ public:
 	virtual void FightBack(CCreature * pCreature){}
 };
 
+
 //虚函数相关的其他内容：
 //析构函数可以为虚（可以通过基类指针删除派生类的对象），构造函数不能为虚
 //纯虚函数：virtual void Print() = 0;
 //包含纯虚函数的类是抽象类（可以理解为现实中不存在的类），不能实例化
 //抽象类的派生类必须实现基类的纯虚函数，才能实例化
-
 
 
 //struct、union、class所占的空间(?)
@@ -315,8 +321,6 @@ struct s2{		//size = 32
 //所有虚函数都放在虚函数表中，因此一个虚函数表有一个sizeof(*)大小的指针
 //自身类的多个虚函数和第一父类的虚函数都在一个表内，之后每多一个父类就会多一个虚函数表
 //虚函数表放在类的开头
-
-
 
 
 //argc至少为1，argv[0]为程序名，后面是参数列表
